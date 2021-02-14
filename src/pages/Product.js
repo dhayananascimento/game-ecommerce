@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
 
+import { ListContext } from "../store/providers/ListProvider";
 import Products from "../services/products.json";
 import Header from "../components/Header";
 import images from "../utils/Images";
@@ -8,17 +9,10 @@ import "./Product.css";
 
 function Product() {
   const { id } = useParams();
+  const [chart, setChart] = useContext(ListContext);
 
   const [product, setProduct] = useState(false);
   const [quantity, setQuantity] = useState(1);
-
-  useEffect(() => {
-    let data = Products.find((element) => {
-      return element.id === parseInt(id);
-    });
-
-    setProduct(data);
-  }, []);
 
   function removeQuantity() {
     let value = quantity;
@@ -35,6 +29,23 @@ function Product() {
     value++;
     setQuantity(value);
   }
+
+  function addItemToChart() {
+    setChart([
+      ...chart,
+      {
+        ...product,
+        quantity,
+      },
+    ]);
+  }
+
+  useEffect(() => {
+    let data = Products.find((element) => {
+      return element.id === parseInt(id);
+    });
+    setProduct(data);
+  }, []);
 
   return (
     <div className="product-container">
@@ -59,7 +70,7 @@ function Product() {
             <button onClick={addQuantity}>+</button>
           </div>
 
-          <Link to="/checkout" className="chart">
+          <Link to="/checkout" className="chart" onClick={addItemToChart}>
             Adicionar ao carrinho
           </Link>
         </div>

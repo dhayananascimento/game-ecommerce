@@ -5,7 +5,7 @@ import "./Card.css";
 
 function Card({ props, image }) {
   return (
-    <Link to="/">
+    <Link to={`/product/${props.id}`}>
       <div className="product">
         <img src={image} alt={props.name} />
         <h2>{props.name}</h2>
@@ -14,7 +14,7 @@ function Card({ props, image }) {
           <p>
             R$ <span>{props.price}</span>
           </p>
-          <p>popularidade: {props.score}</p>
+          <p>Popularidade: {props.score}</p>
         </div>
       </div>
     </Link>

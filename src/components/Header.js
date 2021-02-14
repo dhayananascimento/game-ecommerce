@@ -7,7 +7,9 @@ import "./Header.css";
 function Header() {
   return (
     <header className="header">
+      <Link to="/">
       <span className="logo">Games</span>
+      </Link>
       <Link to="/checkout">
         <Chart className="chart" />
       </Link>

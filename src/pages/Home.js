@@ -30,6 +30,7 @@ function Home() {
 
       <main className="main">
         <h1>Jogos</h1>
+        
         <div className="ordination">
           <h2>Ordenar por: </h2>
           <div>
@@ -38,6 +39,7 @@ function Home() {
             <button onClick={() => dataSort("name")}>nome</button>
           </div>
         </div>
+
         <div className="products">
           {products.map((item) => {
             return (

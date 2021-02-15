@@ -30,6 +30,18 @@ function Chart() {
     }
   }
 
+  function addItem(indexItem) {
+    let quantity = chart[indexItem].quantity;
+    let data = [...chart];
+
+    data.map((item, index) => {
+      if (index === indexItem) item.quantity = quantity + 1;
+
+      return true;
+    });
+    setChart(data);
+  }
+
   function handleCheckout() {
     let auxShipping = 0;
     let auxSubtotal = 0;
@@ -84,13 +96,23 @@ function Chart() {
                     <p>quantidade: {item.quantity}</p>
                   </div>
 
-                  <button
-                    onClick={() => {
-                      removeItem(index);
-                    }}
-                  >
-                    Excluir
-                  </button>
+                  <div>
+                    <button
+                      onClick={() => {
+                        addItem(index);
+                      }}
+                    >
+                      Aumentar item
+                    </button>
+
+                    <button
+                      onClick={() => {
+                        removeItem(index);
+                      }}
+                    >
+                      Excluir
+                    </button>
+                  </div>
                 </div>
               </div>
             );

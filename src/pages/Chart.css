@@ -10,7 +10,6 @@
   padding: 40px 10px;
 
   display: flex;
-  flex-wrap: wrap;
 }
 
 .chart-container .main .empty-chart {
@@ -27,7 +26,6 @@
 }
 
 .chart-container .main .empty-chart a {
-  color: #000;
   font-size: 18px;
   transition: 0.2s;
 }
@@ -66,4 +64,14 @@
 .chart-container .main .checkout a:hover {
   color: #fff;
   background-color: #5c9ead;
+}
+
+@media (max-width: 768px) {
+  .chart-container .main {
+    flex-direction: column;
+  }
+
+  .chart-container .main .checkout {
+    margin-top: 40px;
+  }
 }

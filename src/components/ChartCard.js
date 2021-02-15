@@ -8,13 +8,13 @@ function ChartCard({ item, index, image, addItem, removeItem }) {
       <img src={image} alt={item.name} />
 
       <div className="info-item">
-        <div>
+        <div className="info">
           <p>{item.name}</p>
           <p>R${item.price}</p>
           <p>quantidade: {item.quantity}</p>
         </div>
 
-        <div>
+        <div className="buttons">
           <button
             onClick={() => {
               addItem(index);
@@ -28,7 +28,7 @@ function ChartCard({ item, index, image, addItem, removeItem }) {
               removeItem(index);
             }}
           >
-            Excluir
+            Excluir item
           </button>
         </div>
       </div>

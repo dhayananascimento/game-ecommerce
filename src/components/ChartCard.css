@@ -18,12 +18,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
-.item .info-item button {
+.item .info-item .info {
+  margin: 5px 0;
+}
+
+.item .info-item .buttons {
+  display: flex;
+  margin: 5px 0;
+}
+
+.item .info-item .buttons button {
   border: 0;
   outline: 0;
   padding: 10px;
   cursor: pointer;
-  margin-left: 10px;
+  margin-right: 10px;
 }

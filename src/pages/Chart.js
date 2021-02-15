@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import images from "../utils/Images";
 import "./Chart.css";
 import { Link } from "react-router-dom";
+import ChartCard from "../components/ChartCard";
 
 function Chart() {
   const [chart, setChart] = useContext(ListContext);
@@ -86,35 +87,14 @@ function Chart() {
         <div className="products">
           {chart.map((item, index) => {
             return (
-              <div key={item.id} className="item">
-                <img src={images[item.image]} alt={item.name} />
-
-                <div className="info-item">
-                  <div>
-                    <p>{item.name}</p>
-                    <p>R${item.price}</p>
-                    <p>quantidade: {item.quantity}</p>
-                  </div>
-
-                  <div>
-                    <button
-                      onClick={() => {
-                        addItem(index);
-                      }}
-                    >
-                      Aumentar item
-                    </button>
-
-                    <button
-                      onClick={() => {
-                        removeItem(index);
-                      }}
-                    >
-                      Excluir
-                    </button>
-                  </div>
-                </div>
-              </div>
+              <ChartCard
+                key={item.id}
+                item={item}
+                index={index}
+                image={images[item.image]}
+                addItem={addItem}
+                removeItem={removeItem}
+              />
             );
           })}
         </div>

@@ -1,4 +1,4 @@
-.product {
+.card {
   width: 250px;
   min-height: 350px;
   color: #000;
@@ -16,17 +16,17 @@
   flex-direction: column;
 }
 
-.product:hover {
+.card:hover {
   transform: scale(1.1);
 }
 
-.product img {
+.card img {
   width: 200px;
   height: 200px;
   margin: 0 auto;
 }
 
-.product h2 {
+.card h2 {
   width: 230px;
   display: block;
   overflow: hidden;
@@ -36,7 +36,7 @@
   text-overflow: ellipsis;
 }
 
-.product .details {
+.card .details {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,12 +44,12 @@
   margin-top: 10px;
 }
 
-.product .details p {
+.card .details p {
   font-size: 16px;
   text-align: center;
 }
 
-.product .details p span {
+.card .details p span {
   font-size: 20px;
   color: #5c9ead;
 }

@@ -10,6 +10,7 @@ function Header() {
       <Link to="/">
         <span className="logo">Games</span>
       </Link>
+
       <Link to="/chart">
         <Chart className="chart" />
       </Link>

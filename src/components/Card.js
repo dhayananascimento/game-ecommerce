@@ -6,7 +6,7 @@ import "./Card.css";
 function Card({ props, image }) {
   return (
     <Link to={`/product/${props.id}`}>
-      <div className="product">
+      <div className="card">
         <img src={image} alt={props.name} />
         <h2>{props.name}</h2>
 

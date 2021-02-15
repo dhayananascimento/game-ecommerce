@@ -31,11 +31,21 @@ function Product() {
   }
 
   function addItemToChart() {
+    let data = chart;
+    let oldQuantity = 0;
+    let findItem = data.find((element) => element.id === product.id);
+
+    if (findItem) {
+      let findIndex = data.findIndex((element) => element.id === product.id);
+      oldQuantity = data[findIndex].quantity;
+      data.splice(findIndex, 1);
+    }
+
     setChart([
-      ...chart,
+      ...data,
       {
         ...product,
-        quantity,
+        quantity: quantity + oldQuantity,
       },
     ]);
   }

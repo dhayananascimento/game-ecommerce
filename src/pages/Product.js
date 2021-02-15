@@ -70,7 +70,7 @@ function Product() {
             <button onClick={addQuantity}>+</button>
           </div>
 
-          <Link to="/checkout" className="chart" onClick={addItemToChart}>
+          <Link to="/chart" className="chart" onClick={addItemToChart}>
             Adicionar ao carrinho
           </Link>
         </div>

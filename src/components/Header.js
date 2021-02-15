@@ -8,9 +8,9 @@ function Header() {
   return (
     <header className="header">
       <Link to="/">
-      <span className="logo">Games</span>
+        <span className="logo">Games</span>
       </Link>
-      <Link to="/checkout">
+      <Link to="/chart">
         <Chart className="chart" />
       </Link>
     </header>

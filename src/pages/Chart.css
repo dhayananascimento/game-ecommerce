@@ -1,0 +1,99 @@
+.chart-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fff;
+}
+
+.chart-container .main {
+  margin: 0 auto;
+  max-width: 1400px;
+  padding: 40px 10px;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.chart-container .main .empty-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 0 auto;
+}
+
+.chart-container .main .empty-chart h1 {
+  text-align: center;
+  font-size: 32px;
+}
+
+.chart-container .main .empty-chart a {
+  color: #000;
+  font-size: 18px;
+  transition: 0.2s;
+}
+
+.chart-container .main .empty-chart a:hover {
+  color: #5c9ead;
+}
+
+.chart-container .main .products {
+  flex: 1;
+}
+
+.chart-container .main .products .item {
+  display: flex;
+  align-items: center;
+
+  border-bottom: 2px solid #5c9ead;
+  margin-bottom: 10px;
+  padding: 10px 0;
+  min-width: 200px;
+}
+
+.chart-container .main .products .item img {
+  width: 80px;
+  height: 80px;
+}
+
+.chart-container .main .products .item .info-item {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chart-container .main .products .item .info-item button {
+  border: 0;
+  outline: 0;
+  padding: 10px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.chart-container .main .checkout {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.chart-container .main .checkout p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.chart-container .main .checkout a {
+  color: #5c9ead;
+  font-size: 18px;
+  transition: 0.2s;
+  border: 2px solid #5c9ead;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.chart-container .main .checkout a:hover {
+  color: #fff;
+  background-color: #5c9ead;
+}

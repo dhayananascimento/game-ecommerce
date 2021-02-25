@@ -87,45 +87,51 @@ function Chart() {
       <Header />
 
       <main className="main">
-        <div className="products">
-          {chart.map((item, index) => {
-            return (
-              <ChartCard
-                key={item.id}
-                item={item}
-                index={index}
-                image={images[item.image]}
-                addItem={addItem}
-                removeItem={removeItem}
-              />
-            );
-          })}
+        <div className="shipping">
+          <p><span>Frete grátis</span> para compras a partir de <span>R$ 250,00</span></p>
         </div>
 
-        <div className="checkout">
-          <p>
-            Frete:{" "}
-            {shipping?.toLocaleString("pt-br", {
-              style: "currency",
-              currency: "BRL",
-            })}{" "}
-          </p>
-          <p>
-            Subtotal:{" "}
-            {subtotal?.toLocaleString("pt-br", {
-              style: "currency",
-              currency: "BRL",
-            })}{" "}
-          </p>
-          <p>
-            Total:{" "}
-            {(shipping + subtotal)?.toLocaleString("pt-br", {
-              style: "currency",
-              currency: "BRL",
-            })}{" "}
-          </p>
+        <div className="mainInfo">
+          <div className="products">
+            {chart.map((item, index) => {
+              return (
+                <ChartCard
+                  key={item.id}
+                  item={item}
+                  index={index}
+                  image={images[item.image]}
+                  addItem={addItem}
+                  removeItem={removeItem}
+                />
+              );
+            })}
+          </div>
 
-          <Link to="/">Finalizar compra</Link>
+          <div className="checkout">
+            <p>
+              Frete:
+              {shipping?.toLocaleString("pt-br", {
+                style: "currency",
+                currency: "BRL",
+              })}
+            </p>
+            <p>
+              Subtotal:
+              {subtotal?.toLocaleString("pt-br", {
+                style: "currency",
+                currency: "BRL",
+              })}
+            </p>
+            <p>
+              Total:
+              {(shipping + subtotal)?.toLocaleString("pt-br", {
+                style: "currency",
+                currency: "BRL",
+              })}
+            </p>
+
+            <Link to="/">Finalizar compra</Link>
+          </div>
         </div>
       </main>
     </div>

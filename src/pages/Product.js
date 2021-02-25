@@ -71,7 +71,7 @@ function Product() {
           <h1>{product.name}</h1>
           <p>Popularidade: {product.score}</p>
           <p>
-            R$ <span>{product.price}</span>
+            R$ <span>{product.price?.toLocaleString('pt-br', {minimumFractionDigits: 2})}</span>
           </p>
 
           <div className="quantity">

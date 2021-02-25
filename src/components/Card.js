@@ -12,7 +12,7 @@ function Card({ props, image }) {
 
         <div className="details">
           <p>
-            R$ <span>{props.price}</span>
+            R$ <span>{props.price?.toLocaleString('pt-br', {minimumFractionDigits: 2})}</span>
           </p>
           <p>Popularidade: {props.score}</p>
         </div>

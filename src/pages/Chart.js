@@ -100,9 +100,9 @@ function Chart() {
         </div>
 
         <div className="checkout">
-          <p>Frete: R${shipping.toFixed(2)} </p>
-          <p>Subtotal: R${subtotal.toFixed(2)} </p>
-          <p>Total: R${(shipping + subtotal).toFixed(2)} </p>
+          <p>Frete: {shipping?.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})} </p>
+          <p>Subtotal: {subtotal?.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})} </p>
+          <p>Total: {(shipping + subtotal)?.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})} </p>
 
           <Link to="/">Finalizar compra</Link>
         </div>

@@ -10,7 +10,7 @@ function ChartCard({ item, index, image, addItem, removeItem }) {
       <div className="info-item">
         <div className="info">
           <p>{item.name}</p>
-          <p>R${item.price}</p>
+          <p>{item.price?.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
           <p>quantidade: {item.quantity}</p>
         </div>
 

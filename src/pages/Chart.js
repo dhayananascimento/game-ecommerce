@@ -47,14 +47,17 @@ function Chart() {
     let auxShipping = 0;
     let auxSubtotal = 0;
 
+    const MINIMUM_DISCOUNT_AMOUNT = 250;
+    const SHIPPING_BY_PRODUCT = 10;
+
     for (let i = 0; i < chart.length; i++) {
       const element = chart[i];
       auxSubtotal += element.quantity * element.price;
       auxShipping += element.quantity;
     }
 
-    auxShipping = auxShipping * 10;
-    if (auxSubtotal >= 250) auxShipping = 0;
+    auxShipping = auxShipping * SHIPPING_BY_PRODUCT;
+    if (auxSubtotal >= MINIMUM_DISCOUNT_AMOUNT) auxShipping = 0;
 
     setShipping(auxShipping);
     setSubtotal(auxSubtotal);
@@ -100,9 +103,27 @@ function Chart() {
         </div>
 
         <div className="checkout">
-          <p>Frete: {shipping?.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})} </p>
-          <p>Subtotal: {subtotal?.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})} </p>
-          <p>Total: {(shipping + subtotal)?.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})} </p>
+          <p>
+            Frete:{" "}
+            {shipping?.toLocaleString("pt-br", {
+              style: "currency",
+              currency: "BRL",
+            })}{" "}
+          </p>
+          <p>
+            Subtotal:{" "}
+            {subtotal?.toLocaleString("pt-br", {
+              style: "currency",
+              currency: "BRL",
+            })}{" "}
+          </p>
+          <p>
+            Total:{" "}
+            {(shipping + subtotal)?.toLocaleString("pt-br", {
+              style: "currency",
+              currency: "BRL",
+            })}{" "}
+          </p>
 
           <Link to="/">Finalizar compra</Link>
         </div>

@@ -2,10 +2,16 @@ import React, { useEffect, useState, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
 
 import { ListContext } from "../store/providers/ListProvider";
-import Products from "../services/products.json";
+import ProductsData from "../services/products.json";
 import Header from "../components/Header";
 import images from "../utils/Images";
-import "./Product.css";
+import {
+  Container,
+  Main,
+  InfoWrapper,
+  ImageWrapper,
+  Quantity,
+} from "./ProductsStyles";
 
 function Product() {
   const { id } = useParams();
@@ -51,41 +57,46 @@ function Product() {
   }
 
   useEffect(() => {
-    let data = Products.find((element) => {
+    let data = ProductsData.find((element) => {
       return element.id === parseInt(id);
     });
     setProduct(data);
   }, []);
 
   return (
-    <div className="product-container">
+    <Container>
       <Header />
 
-      <main className="main">
-        <div className="image">
+      <Main>
+        <ImageWrapper>
           <img src={images[product.image]} alt={product.name} />
           <Link to="/">Continuar comprando...</Link>
-        </div>
+        </ImageWrapper>
 
-        <div className="info">
+        <InfoWrapper>
           <h1>{product.name}</h1>
           <p>Popularidade: {product.score}</p>
           <p>
-            R$ <span>{product.price?.toLocaleString('pt-br', {minimumFractionDigits: 2})}</span>
+            R${" "}
+            <span>
+              {product.price?.toLocaleString("pt-br", {
+                minimumFractionDigits: 2,
+              })}
+            </span>
           </p>
 
-          <div className="quantity">
+          <Quantity>
             <button onClick={removeQuantity}>-</button>
             <input type="text" value={quantity} disabled />
             <button onClick={addQuantity}>+</button>
-          </div>
+          </Quantity>
 
           <Link to="/chart" className="chart" onClick={addItemToChart}>
             Adicionar ao carrinho
           </Link>
-        </div>
-      </main>
-    </div>
+        </InfoWrapper>
+      </Main>
+    </Container>
   );
 }
 

@@ -1,11 +1,20 @@
 import React, { useEffect, useState, useContext } from "react";
+import { Link } from "react-router-dom";
 
 import { ListContext } from "../store/providers/ListProvider";
+import ChartCard from "../components/ChartCard";
 import Header from "../components/Header";
 import images from "../utils/Images";
-import "./Chart.css";
-import { Link } from "react-router-dom";
-import ChartCard from "../components/ChartCard";
+
+import {
+  Main,
+  Container,
+  EmptyChart,
+  Shipping,
+  MainInfo,
+  Products,
+  Checkout,
+} from "./ChartStyles";
 
 function Chart() {
   const [chart, setChart] = useContext(ListContext);
@@ -69,30 +78,33 @@ function Chart() {
 
   if (!chart.length) {
     return (
-      <div className="chart-container">
+      <Container>
         <Header />
 
-        <main className="main">
-          <div className="empty-chart">
+        <Main>
+          <EmptyChart>
             <h1>Carrinho não possui itens!</h1>
             <Link to="/">Continuar navegando...</Link>
-          </div>
-        </main>
-      </div>
+          </EmptyChart>
+        </Main>
+      </Container>
     );
   }
 
   return (
-    <div className="chart-container">
+    <Container>
       <Header />
 
-      <main className="main">
-        <div className="shipping">
-          <p><span>Frete grátis</span> para compras a partir de <span>R$ 250,00</span></p>
-        </div>
+      <Main>
+        <Shipping>
+          <p>
+            <span>Frete grátis</span> para compras a partir de{" "}
+            <span>R$ 250,00</span>
+          </p>
+        </Shipping>
 
-        <div className="mainInfo">
-          <div className="products">
+        <MainInfo>
+          <Products>
             {chart.map((item, index) => {
               return (
                 <ChartCard
@@ -105,9 +117,9 @@ function Chart() {
                 />
               );
             })}
-          </div>
+          </Products>
 
-          <div className="checkout">
+          <Checkout>
             <p>
               Frete:&nbsp;
               {shipping?.toLocaleString("pt-br", {
@@ -131,10 +143,10 @@ function Chart() {
             </p>
 
             <Link to="/">Finalizar compra</Link>
-          </div>
-        </div>
-      </main>
-    </div>
+          </Checkout>
+        </MainInfo>
+      </Main>
+    </Container>
   );
 }
 

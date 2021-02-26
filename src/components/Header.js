@@ -2,19 +2,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { ReactComponent as Chart } from "../assets/cart-icon.svg";
-import "./Header.css";
+import { HeaderWrapper } from "./HeaderStyles";
 
 function Header() {
   return (
-    <header className="header">
+    <HeaderWrapper>
       <Link to="/">
-        <span className="logo">Games</span>
+        <span>Games</span>
       </Link>
 
       <Link to="/chart">
-        <Chart className="chart" />
+        <Chart />
       </Link>
-    </header>
+    </HeaderWrapper>
   );
 }
 

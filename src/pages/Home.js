@@ -3,15 +3,15 @@ import React, { useEffect, useState } from "react";
 import Card from "../components/Card";
 import Header from "../components/Header";
 
-import Products from "../services/products.json";
+import ProductsData from "../services/products.json";
 import images from "../utils/Images";
-import "./Home.css";
 
+import { Container, Main, Title, Ordination, Products } from "./HomeStyles";
 function Home() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    setProducts(Products);
+    setProducts(ProductsData);
   }, []);
 
   function dataSort(orderBy) {
@@ -25,30 +25,30 @@ function Home() {
   }
 
   return (
-    <div className="home-container">
+    <Container>
       <Header />
 
-      <main className="main">
-        <h1>Jogos</h1>
+      <Main>
+        <Title>Jogos</Title>
 
-        <div className="ordination">
+        <Ordination>
           <h2>Ordenar por: </h2>
           <div>
             <button onClick={() => dataSort("price")}>preço</button>
             <button onClick={() => dataSort("score")}>popularidade</button>
             <button onClick={() => dataSort("name")}>nome</button>
           </div>
-        </div>
+        </Ordination>
 
-        <div className="products">
+        <Products>
           {products.map((item) => {
             return (
               <Card key={item.id} props={item} image={images[item.image]} />
             );
           })}
-        </div>
-      </main>
-    </div>
+        </Products>
+      </Main>
+    </Container>
   );
 }
 

@@ -1,14 +1,13 @@
 import React from "react";
-
-import "./ChartCard.css";
+import { ItemWrapper, InfoWrapper, Info, Quantity } from "./ChartCardStyles";
 
 function ChartCard({ item, index, image, addItem, removeItem }) {
   return (
-    <div key={item.id} className="item">
+    <ItemWrapper>
       <img src={image} alt={item.name} />
 
-      <div className="info-item">
-        <div className="info">
+      <InfoWrapper>
+        <Info>
           <p>{item.name}</p>
           <p>
             {item.price?.toLocaleString("pt-br", {
@@ -16,9 +15,9 @@ function ChartCard({ item, index, image, addItem, removeItem }) {
               currency: "BRL",
             })}
           </p>
-        </div>
+        </Info>
 
-        <div className="quantity">
+        <Quantity>
           <button
             onClick={() => {
               removeItem(index);
@@ -34,9 +33,9 @@ function ChartCard({ item, index, image, addItem, removeItem }) {
           >
             +
           </button>
-        </div>
-      </div>
-    </div>
+        </Quantity>
+      </InfoWrapper>
+    </ItemWrapper>
   );
 }
 

@@ -109,21 +109,21 @@ function Chart() {
 
           <div className="checkout">
             <p>
-              Frete:
+              Frete:&nbsp;
               {shipping?.toLocaleString("pt-br", {
                 style: "currency",
                 currency: "BRL",
               })}
             </p>
             <p>
-              Subtotal:
+              Subtotal:&nbsp;
               {subtotal?.toLocaleString("pt-br", {
                 style: "currency",
                 currency: "BRL",
               })}
             </p>
             <p>
-              Total:
+              Total:&nbsp;
               {(shipping + subtotal)?.toLocaleString("pt-br", {
                 style: "currency",
                 currency: "BRL",

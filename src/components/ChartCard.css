@@ -27,14 +27,14 @@
 
 .item .info-item .quantity {
   display: flex;
-  background-color: #eee;
+  background-color: #ededed;
   width: 110px;
 }
 
 .item .info-item .quantity input {
   width: 50px;
   border: none;
-  background-color: #eee;
+  background-color: #ededed;
   outline: 0;
   text-align: center;
 }

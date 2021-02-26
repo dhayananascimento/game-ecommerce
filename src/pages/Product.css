@@ -34,10 +34,15 @@
   font-size: 18px;
   transition: 0.2s;
   margin-top: 50px;
+
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #ededed;
 }
 
 .product-container .main .image a:hover {
-  color: #5c9ead;
+  background-color: #5c9ead;
+  color: #fff;
 }
 
 .product-container .main .info h1 {
@@ -55,7 +60,7 @@
 
 .product-container .main .info .quantity {
   display: flex;
-  background-color: #eee;
+  background-color: #ededed;
   width: 200px;
   margin-top: 30px;
 }
@@ -63,7 +68,7 @@
 .product-container .main .info .quantity input {
   width: 130px;
   border: none;
-  background-color: #eee;
+  background-color: #ededed;
   outline: 0;
   text-align: center;
 }

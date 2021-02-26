@@ -36,6 +36,7 @@
   transition: 0.2s;
   outline: none;
   border-radius: 5px;
+  background-color: #ededed;
 }
 
 .home-container .main .ordination button:hover {

@@ -10,25 +10,29 @@ function ChartCard({ item, index, image, addItem, removeItem }) {
       <div className="info-item">
         <div className="info">
           <p>{item.name}</p>
-          <p>{item.price?.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
-          <p>quantidade: {item.quantity}</p>
+          <p>
+            {item.price?.toLocaleString("pt-br", {
+              style: "currency",
+              currency: "BRL",
+            })}
+          </p>
         </div>
 
-        <div className="buttons">
-          <button
-            onClick={() => {
-              addItem(index);
-            }}
-          >
-            Aumentar item
-          </button>
-
+        <div className="quantity">
           <button
             onClick={() => {
               removeItem(index);
             }}
           >
-            Excluir item
+            -
+          </button>
+          <input type="text" value={item?.quantity} disabled />
+          <button
+            onClick={() => {
+              addItem(index);
+            }}
+          >
+            +
           </button>
         </div>
       </div>
